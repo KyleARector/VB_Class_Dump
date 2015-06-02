@@ -38,6 +38,7 @@ Namespace DBConn
         End Sub
 
         Public Sub RunQuery(ByVal QueryString As String)
+            'Need to sanitize query string/catch if query not well formed
             _Connection.Open()
             _SQLCommand = New SqlCommand(QueryString, _Connection)
             _SQLReader = _SQLCommand.ExecuteReader
